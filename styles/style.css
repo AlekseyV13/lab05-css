@@ -78,49 +78,7 @@ body {
     margin-top: 40px;
 }
 
-.styled-table {
-    width: 100%; 
-    border-collapse: collapse; 
-    margin: 25px 0;
-    font-size: 16px;
-    background-color: var(--color-surface); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
-    border-radius: 8px; 
-    overflow: hidden; 
-}
 
-.styled-table caption {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--color-primary);
-    text-align: left;
-}
-
-.styled-table thead tr {
-    background-color: var(--color-primary);
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--color-border); 
-}
-
-.styled-table tbody tr:last-of-type td {
-    border-bottom: none;
-}
-
-.styled-table tbody tr:nth-child(even) {
-    background-color: #f3f6f9;
-}
-
-.styled-table tbody tr:hover {
-    background-color: #e2e8f0;
-    transition: background-color 0.2s ease;
-}
 
 .section {
     margin-bottom: 40px; 
@@ -302,4 +260,45 @@ textarea:focus {
 
 .btn-submit:active {
     transform: scale(0.98); 
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.learning-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.card-body strong {
+    color: var(--color-primary);
 }

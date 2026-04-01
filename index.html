@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мій проєкт | Головна</title>
-    
+
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
@@ -25,7 +27,8 @@
     <main class="container">
         <section class="section card">
             <h2>Про цей проєкт</h2>
-            <p>Цей сайт створено для закріплення навичок роботи з HTML та CSS. Я вивчаю, як створювати адаптивні та красиві інтерфейси.</p>
+            <p>Цей сайт створено для закріплення навичок роботи з HTML та CSS. Я вивчаю, як створювати адаптивні та
+                красиві інтерфейси.</p>
         </section>
 
         <section class="section">
@@ -34,7 +37,7 @@
                 <img src="./assets/img/tech.jpg" alt="Технології" class="responsive-img">
                 <figcaption>Робота з кодом та базами даних</figcaption>
             </figure>
-            
+
             <ul class="styled-list">
                 <li>Написання SQL запитів (PostgreSQL)</li>
                 <li>Розробка на Python та Django</li>
@@ -44,33 +47,34 @@
 
         <section class="section">
             <h2>План навчання</h2>
-            <table class="styled-table">
-                <caption>Етапи вивчення технологій</caption>
-                <thead>
-                    <tr>
-                        <th>Технологія</th>
-                        <th>Статус</th>
-                        <th>Практика</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HTML & CSS</td>
-                        <td>В процесі</td>
-                        <td>Створення сайту</td>
-                    </tr>
-                    <tr>
-                        <td>Python (Django)</td>
-                        <td>Активно</td>
-                        <td>Розробка бекенду</td>
-                    </tr>
-                    <tr>
-                        <td>SQL (PostgreSQL)</td>
-                        <td>Виконано</td>
-                        <td>Написання запитів</td>
-                    </tr>
-                </tbody>
-            </table>
+            <section class="section">
+                <h2>План навчання</h2>
+                <div class="learning-grid">
+                    <div class="learning-card">
+                        <div class="card-header">HTML & CSS</div>
+                        <div class="card-body">
+                            <p><strong>Статус:</strong> В процесі</p>
+                            <p><strong>Практика:</strong> Створення адаптивного сайту</p>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <div class="card-header">Python (Django)</div>
+                        <div class="card-body">
+                            <p><strong>Статус:</strong> Активно</p>
+                            <p><strong>Практика:</strong> Розробка бекенду та API</p>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <div class="card-header">SQL (PostgreSQL)</div>
+                        <div class="card-body">
+                            <p><strong>Статус:</strong> Виконано</p>
+                            <p><strong>Практика:</strong> Проєктування баз даних</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 
@@ -80,4 +84,5 @@
         </div>
     </footer>
 </body>
+
 </html>
