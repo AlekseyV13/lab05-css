@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій проєкт | Головна</title>
+    
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Практична робота: Основи CSS</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Головна</a></li>
+                    <li><a href="pages/about.html">Про мене</a></li>
+                    <li><a href="pages/contact.html">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section card">
+            <h2>Про цей проєкт</h2>
+            <p>Цей сайт створено для закріплення навичок роботи з HTML та CSS. Я вивчаю, як створювати адаптивні та красиві інтерфейси.</p>
+        </section>
+
+        <section class="section">
+            <h2>Мої інтереси в IT</h2>
+            <figure class="image-wrapper">
+                <img src="./assets/img/tech.jpg" alt="Технології" class="responsive-img">
+                <figcaption>Робота з кодом та базами даних</figcaption>
+            </figure>
+            
+            <ul class="styled-list">
+                <li>Написання SQL запитів (PostgreSQL)</li>
+                <li>Розробка на Python та Django</li>
+                <li>Робота з мікроконтролерами Arduino</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>План навчання</h2>
+            <table class="styled-table">
+                <caption>Етапи вивчення технологій</caption>
+                <thead>
+                    <tr>
+                        <th>Технологія</th>
+                        <th>Статус</th>
+                        <th>Практика</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML & CSS</td>
+                        <td>В процесі</td>
+                        <td>Створення сайту</td>
+                    </tr>
+                    <tr>
+                        <td>Python (Django)</td>
+                        <td>Активно</td>
+                        <td>Розробка бекенду</td>
+                    </tr>
+                    <tr>
+                        <td>SQL (PostgreSQL)</td>
+                        <td>Виконано</td>
+                        <td>Написання запитів</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Олексій Войчук</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій проєкт | Контакти</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Практична робота: Основи CSS</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Головна</a></li>
+                    <li><a href="about.html">Про мене</a></li>
+                    <li><a href="contact.html" class="active">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section card form-container">
+            <h2>Зв'яжіться зі мною</h2>
+            <p>Заповніть форму нижче, якщо маєте пропозиції щодо співпраці.</p>
+            
+            <form action="#" method="post" class="contact-form">
+                <fieldset>
+                    <legend>Контактні дані</legend>
+                    
+                    <div class="form-group">
+                        <label for="username">Ваше ім'я:</label>
+                        <input type="text" id="username" name="user_name" placeholder="Введіть ім'я" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="useremail">Ваш Email:</label>
+                        <input type="email" id="useremail" name="user_email" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Тема звернення:</label>
+                        <select id="subject" name="subject">
+                            <option value="job">Пропозиція роботи (Helpdesk/QA)</option>
+                            <option value="collab">Співпраця по проєкту</option>
+                            <option value="other">Інше</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Звідки ви про мене дізналися?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="source" value="linkedin" checked> LinkedIn</label>
+                            <label><input type="radio" name="source" value="github"> GitHub</label>
+                            <label><input type="radio" name="source" value="friend"> Від знайомих</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Повідомлення:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Напишіть ваше повідомлення тут..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="agree" required>
+                            Я даю згоду на обробку персональних даних
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Надіслати повідомлення</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Олексій Войчук</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .section {
+        margin-bottom: 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .site-header {
+        padding: 10px 0;
+    }
+
+    .site-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-list a {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        background-color: #f3f6f9;
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+    }
+
+    .nav-list a.active {
+        background-color: var(--color-primary);
+        color: #ffffff;
+        border-bottom: none;
+    }
+
+    .card {
+        padding: 20px 15px;
+        border-radius: 8px;
+        border-left-width: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .two-column {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .text-content,
+    .media-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .media-content {
+        padding: 15px;
+    }
+
+    video, 
+    audio, 
+    img, 
+    iframe,
+    .responsive-img,
+    .styled-video,
+    .styled-audio {
+        max-width: 100% !important;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .styled-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .styled-table th, 
+    .styled-table td {
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    fieldset {
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .radio-group label {
+        margin-right: 0;
+        padding: 10px;
+        background: #f8fafc;
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, a, li, span, div {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 20px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .card {
+        padding: 15px 10px;
+    }
+}
