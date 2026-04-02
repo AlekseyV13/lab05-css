@@ -7,6 +7,7 @@
     <title>Мій проєкт | Про мене</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="/js/main.js" defer></script>
 </head>
 
 <body>
@@ -14,19 +15,49 @@
         <div class="container">
             <h1>Практична робота: Основи CSS</h1>
             <nav>
+                <button class="menu-toggle" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-list">
                     <li><a href="../index.html">Головна</a></li>
                     <li><a href="about.html" class="active">Про мене</a></li>
                     <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle" class="theme-btn" aria-label="Переключити тему">
+                <span class="icon">🌙</span>
+            </button>
         </div>
     </header>
 
     <main class="container">
+        <button id="open-modal-btn" class="btn-submit" style="margin: 20px 0; width: auto;">Відкрити секретне
+            вікно</button>
+
+        <div id="modal-overlay" class="modal-overlay" hidden>
+            <div class="modal-box">
+                <button class="modal-close-btn" aria-label="Закрити вікно">&times;</button>
+                <h3>Привіт!</h3>
+                <p>Це модальне вікно. Воно створене за допомогою JavaScript. Ти можеш закрити його, натиснувши на
+                    хрестик або просто клікнувши на темний фон навколо.</p>
+            </div>
+        </div>
         <section class="section card">
             <h2>Про мене та мої захоплення</h2>
+            <div class="filter-controls">
+                <button class="filter-btn" data-filter="all">Усі</button>
+                <button class="filter-btn" data-filter="it">IT</button>
+                <button class="filter-btn" data-filter="hobby">Хобі</button>
+            </div>
 
+            <div class="filter-items">
+                <div class="filter-item card" data-category="it">Програмування на Python</div>
+                <div class="filter-item card" data-category="hobby">3D Друк</div>
+                <div class="filter-item card" data-category="it">Робота з SQL</div>
+                <div class="filter-item card" data-category="hobby">Arduino проєкти</div>
+            </div>
             <div class="two-column">
 
                 <div class="text-content">
@@ -58,8 +89,28 @@
                     </div>
                 </div>
 
+                <section class="section card">
+                    <h2>Часті питання (FAQ)</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">Які технології я використовую?</button>
+                            <div class="accordion-content">
+                                <p>Я працюю з Python (Django), HTML/CSS, JavaScript та SQL (PostgreSQL). Також маю
+                                    досвід з Arduino.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Чи відкритий я до пропозицій?</button>
+                            <div class="accordion-content">
+                                <p>Так, я шукаю можливості для стажування або роботи на позиціях Junior QA або Technical
+                                    Support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">
@@ -67,6 +118,11 @@
             <p>&copy; 2026 Олексій Войчук</p>
         </div>
     </footer>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Олексій Войчук</p>
+    </footer>
+    <button id="back-to-top" hidden>↑</button>
 </body>
 
 </html>

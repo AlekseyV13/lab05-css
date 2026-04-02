@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -15,12 +16,20 @@
         <div class="container">
             <h1>Практична робота: Основи CSS</h1>
             <nav>
+                <button class="menu-toggle" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">Головна</a></li>
                     <li><a href="pages/about.html">Про мене</a></li>
                     <li><a href="pages/contact.html">Контакти</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle" class="theme-btn" aria-label="Переключити тему">
+                <span class="icon">🌙</span>
+            </button>
         </div>
     </header>
 
@@ -83,6 +92,11 @@
             <p>&copy; 2026 Олексій Войчук</p>
         </div>
     </footer>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Олексій Войчук</p>
+    </footer>
+     <button id="back-to-top" hidden>↑</button>
 </body>
 
 </html>
