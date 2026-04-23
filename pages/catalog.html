@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог проєктів | Мій сайт</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Мій IT Каталог</h1>
+            
+            <nav>
+                <button class="menu-toggle" aria-expanded="false" aria-label="Відкрити меню">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <ul class="nav-list">
+                    <li><a href="../index.html">Головна</a></li>
+                    <li><a href="about.html">Про мене</a></li>
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle" class="theme-btn">
+                <span class="icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <header class="section-header">
+                <h2>Навчальний каталог</h2>
+                <p>Тут ви можете знайти мої проєкти, відфільтрувати їх за категоріями або знайти потрібний через пошук.</p>
+            </header>
+
+            <div class="controls card">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="🔍 Пошук за назвою проєкту...">
+                </div>
+                
+                <div class="filter-group">
+                    <select id="category-filter">
+                        <option value="all">Усі категорії</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="python">Python</option>
+                        <option value="data">Data Science</option>
+                        <option value="hobby">Хобі</option>
+                    </select>
+
+                    <select id="sort-select">
+                        <option value="default">Сортувати: за замовчуванням</option>
+                        <option value="price-asc">Ціна: від найменшої</option>
+                        <option value="price-desc">Ціна: від найбільшої</option>
+                        <option value="rating-desc">За рейтингом (⭐)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loading-state" class="status-msg">⏳ Завантаження бази даних...</div>
+            <div id="error-state" class="status-msg error" hidden>❌ Не вдалося завантажити дані. Перевірте з'єднання.</div>
+            <div id="empty-state" class="status-msg" hidden>😕 На жаль, за вашим запитом нічого не знайдено.</div>
+
+            <div id="catalog-grid" class="learning-grid">
+                </div>
+
+            <div class="pagination-wrapper">
+                <button id="load-more" class="btn-submit">Показати ще</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="details-modal" class="modal-overlay" hidden>
+        <div class="modal-box">
+            <button class="modal-close-btn" title="Закрити">&times;</button>
+            <div id="modal-content">
+                </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Олексій Войчук. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" hidden>↑</button>
+
+</body>
+</html>

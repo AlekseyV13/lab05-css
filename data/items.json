@@ -1,0 +1,10 @@
+[
+  { "id": 1, "title": "HTML для початківців", "category": "frontend", "description": "Основи тегів та структури.", "image": "https://picsum.photos/id/1/300/200", "price": 450, "rating": 4.8 },
+  { "id": 2, "title": "Майстер CSS Grid", "category": "frontend", "description": "Складна верстка за 2 години.", "image": "https://picsum.photos/id/2/300/200", "price": 600, "rating": 4.9 },
+  { "id": 3, "title": "Python: Перші кроки", "category": "python", "description": "Синтаксис та базові алгоритми.", "image": "https://picsum.photos/id/3/300/200", "price": 800, "rating": 4.7 },
+  { "id": 4, "title": "Django для профі", "category": "python", "description": "Створення бекенду складних сайтів.", "image": "https://picsum.photos/id/4/300/200", "price": 1200, "rating": 5.0 },
+  { "id": 5, "title": "Основи SQL", "category": "data", "description": "Робота з PostgreSQL та запитами.", "image": "https://picsum.photos/id/5/300/200", "price": 700, "rating": 4.5 },
+  { "id": 6, "title": "JavaScript: DOM", "category": "frontend", "description": "Маніпуляції з елементами сторінки.", "image": "https://picsum.photos/id/6/300/200", "price": 550, "rating": 4.6 },
+  { "id": 7, "title": "Arduino Робототехніка", "category": "hobby", "description": "Програмування мікроконтролерів.", "image": "https://picsum.photos/id/7/300/200", "price": 1500, "rating": 4.9 },
+  { "id": 8, "title": "Аналіз даних", "category": "data", "description": "Pandas, NumPy та візуалізація.", "image": "https://picsum.photos/id/8/300/200", "price": 1100, "rating": 4.4 }
+]
