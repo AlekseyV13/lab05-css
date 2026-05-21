@@ -1,5 +1,5 @@
 let allItems = [];
-let displayedCount = 4; 
+let displayedCount = 4;
 
 document.addEventListener('DOMContentLoaded', async () => {
     const grid = document.querySelector('#catalog-grid');
@@ -9,14 +9,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!grid) return;
 
     try {
-        const response = await fetch('../data/items.json');
-        if (!response.ok) throw new Error('Помилка завантаження файлу даних');
-        
-        allItems = await response.json();
+        allItems = await fetchItems();
 
         loading.hidden = true;
-        applyFilters(); 
-        initListeners(); 
+        applyFilters();
+        initListeners();
     } catch (err) {
         loading.hidden = true;
         errorState.hidden = false;
@@ -46,12 +43,18 @@ function renderCatalog(items) {
                         <h3>${item.title}</h3>
                         <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">${item.description}</p>
                         <p><strong>Ціна:</strong> ${item.price} грн | ⭐ ${item.rating}</p>
+                        
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                            <button class="btn-details" data-id="${item.id}">Деталі</button>
+                            <div style="display: flex; gap: 5px;">
+                                <button class="btn-details" data-id="${item.id}">Деталі</button>
+                                <a href="item-form.html?id=${item.id}" class="btn-edit" style="background: #ffc107; color: black; border: none; padding: 5px 10px; border-radius: 5px; text-decoration: none; cursor: pointer;" title="Редагувати">✏️</a>
+                                <button class="btn-delete" data-id="${item.id}" style="background: #ff4d4d; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;" title="Видалити">🗑️</button>
+                            </div>
                             <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${item.id}" title="Додати в обране">
                                 ${isFav ? '❤️' : '🤍'}
                             </button>
                         </div>
+                        
                     </div>
                 </div>
             `;
@@ -60,6 +63,7 @@ function renderCatalog(items) {
 
     initFavActions();
     initDetailButtons();
+    initDeleteButtons();
 }
 
 function initListeners() {
@@ -69,17 +73,17 @@ function initListeners() {
     const loadMore = document.querySelector('#load-more');
 
     const handleChange = () => {
-        displayedCount = 4; 
+        displayedCount = 4;
         applyFilters();
     };
 
     if (search) search.addEventListener('input', handleChange);
     if (category) category.addEventListener('change', handleChange);
     if (sort) sort.addEventListener('change', handleChange);
-    
+
     if (loadMore) {
         loadMore.addEventListener('click', () => {
-            displayedCount += 4; 
+            displayedCount += 4;
             applyFilters();
         });
     }
@@ -123,7 +127,7 @@ function initFavActions() {
             }
 
             localStorage.setItem('catalogFavs', JSON.stringify(favs));
-            applyFilters(); 
+            applyFilters();
         });
     });
 }
@@ -159,19 +163,41 @@ function initDetailButtons() {
                     </div>
                 `;
                 modal.hidden = false;
-                document.body.style.overflow = 'hidden'; 
+                document.body.style.overflow = 'hidden';
             }
         });
     });
 
     const closeModal = () => {
         modal.hidden = true;
-        document.body.style.overflow = ''; 
+        document.body.style.overflow = '';
     };
 
     closeBtn.addEventListener('click', closeModal);
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
+    });
+}
+
+function initDeleteButtons() {
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+        btn.addEventListener('click', async (event) => {
+            event.stopPropagation(); 
+            
+            const id = btn.dataset.id;
+            
+            if (confirm('Ви впевнені, що хочете видалити цей елемент назавжди?')) {
+                try {
+                    await deleteItem(id); 
+                    
+                    allItems = await fetchItems(); 
+                    
+                    applyFilters(); 
+                } catch (error) {
+                    alert('Помилка при видаленні: ' + error.message);
+                }
+            }
+        });
     });
 }
